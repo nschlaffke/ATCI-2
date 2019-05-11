@@ -42,7 +42,7 @@ for trainingExamples_ = 1:length(TrainingExamples)
                    trainingExamples, epochsBP, hiddenLayers, hiddenUnits, learningRateBP);
                    
                    % Get the data and the network
-                   Data = LoadData_MNIST_(trainingExamples);
+                   Data = LoadData_MNIST;
                    [ReducedData Network] = DeepBPN_RBM_set_parameters_MNIST;
                    
                    % Here we set the parameters
@@ -77,11 +77,11 @@ for trainingExamples_ = 1:length(TrainingExamples)
                            hiddenUnits = HiddenUnits{hiddenUnits_};
                            learningRateBP = LearningRateBP{learningRateBP_};
                            learningRateRBM = LearningRateRBM{learningRateRBM_}
-                           fprintf('$$$Pretrain: TRUE\ttrainingExamples: %d\tepochsBP: %d\thiddenLayers: %d\thiddenUnits: %d\tlearningRateBP: %.3f\n',... 
-                           trainingExamples, epochsBP, hiddenLayers, hiddenUnits, learningRateBP);
+                           fprintf('$$$Pretrain: TRUE\ttrainingExamples: %d\tepochsBP: %d\thiddenLayers: %d\thiddenUnits: %d\tlearningRateBP: %.3f\tlearningRateRBM: %.3f\tepochsRBM: %d\n',... 
+                           trainingExamples, epochsBP, hiddenLayers, hiddenUnits, learningRateBP, learningRateRBM, epochsRBM);
 
                            % Get the data and the network
-                           Data = LoadData_MNIST_(trainingExamples);
+                           Data = LoadData_MNIST;
                            [ReducedData Network] = DeepBPN_RBM_set_parameters_MNIST;
 
                            % Here we set the parameters
